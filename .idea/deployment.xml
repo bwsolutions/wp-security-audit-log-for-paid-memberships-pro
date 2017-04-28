@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" serverName="AAC Test">
     <serverData>
       <paths name="AAC Prod">
         <serverdata>
@@ -12,7 +12,8 @@
       <paths name="AAC Test">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/wp-content/plugins/wpsecurity-audit-log-for-pmpro" local="$PROJECT_DIR$" web="/wptest/" />
+            <mapping deploy="/wp-content/plugins" local="$PROJECT_DIR$/.." web="/wptest/" />
           </mappings>
         </serverdata>
       </paths>

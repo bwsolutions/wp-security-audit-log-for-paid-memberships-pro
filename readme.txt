@@ -3,6 +3,7 @@ Contributors: bwsolutions
 Tags: WP Security Audit Log, Paid Memberships Pro, pmpro, memberships, audit
 Requires at least: 4
 Tested up to: 4.7.2
+Depends on : WP Security Audit Log, Paid Memberships Pro
 Stable tag: 1.0
 
 An Addon to WP Security Audit Log to log events in Paid Memberships Pro
@@ -46,6 +47,10 @@ To Exclude alerts:
 == Screenshots ==
 
 == Changelog ==
+
+= 1.1 =
+* Fixed to work with version 2.6.2 of WP Security Audit Log
+* Added activation checks to make sure plugin versions compatibility
 
 = 1.0 =
 * Initial version
