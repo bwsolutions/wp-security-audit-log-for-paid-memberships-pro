@@ -3,7 +3,7 @@
   Plugin Name: WP Security Audit Log for Paid Memberships Pro
   Plugin URI: https://github.com/bwsolutions/wpsal4pmpro
   Description: an addon to WP Security Audit Log Plugin to track events in Paid Memberships Pro
-  Version: 1.1
+  Version: 1.1.1
   Author: Bill Stoltz
   Author URI:
   Depends: WP Security Audit Log, Paid Memberships Pro
@@ -51,16 +51,19 @@ function wsalpmpro_plugin_activation() {
 }
 
 function wsalpmpro_wsal_init ($wsal) {
-    include_once 'pmpro-alerts.php';
+
+	include_once 'pmpro-alerts.php';
     $wsal->alerts->RegisterGroup($pmpro_alerts);
 
-    $sensorDir = 'Sensors' . DIRECTORY_SEPARATOR ;
-    if (is_dir($sensorDir) && is_readable($sensorDir)) {
-        foreach (glob($sensorDir . '*.php') as $file) {
-            require_once($file);
+    $sensorDir = trailingslashit( dirname( __FILE__ ) );
+    $sensorDirPath =  $sensorDir . 'Sensors' . DIRECTORY_SEPARATOR ;
+
+    if (is_dir($sensorDirPath) && is_readable($sensorDirPath)) {
+        foreach (glob($sensorDirPath . '*.php') as $file) {
+	        require_once($file);
             $file = substr($file, 0, -4);
-            $class = "WSAL_Sensors_" . str_replace($sensorDir, '', $file);
-            $this->AddFromClass($class);
+            $class = "WSAL_Sensors_" . str_replace($sensorDirPath, '', $file);
+	        $wsal->sensors->AddFromClass($class);
         }
     }
 }

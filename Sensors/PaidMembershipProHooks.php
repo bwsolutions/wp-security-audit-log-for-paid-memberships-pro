@@ -252,8 +252,9 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
 
         if ($code_id > 0) {
             $row = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_discount_codes WHERE id = '$code_id' ");
-            //  'PMPro Save Disoount Code - ID(%CODEID%) Code %CODE% Starts %START% Expires %EXPIRES% uses %USES% '
+            //  'PMPro %MSG% Disoount Code - ID(%CODEID%) Code %CODE% Starts %START% Expires %EXPIRES% uses %USES% '
             $this->plugin->alerts->Trigger(8607, array(
+            	'MSG' => 'updated',
                 'CODEID' => $row->id,
                 'CODE' => $row->code,
                 'START' => $row->starts,
@@ -261,10 +262,15 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
                 'USES' => $row->uses,
             ));
         } else {
-            //  'PMPro Added Disoount Code - ID(%CODEID%)  '
-            $this->plugin->alerts->Trigger(8607, array(
-                'CODEID' => $code_id,
-            ));
+	        $code = preg_replace("/[^A-Za-z0-9\-]/", "", sanitize_text_field($_POST['code']));
+	        $row = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_discount_codes WHERE code = '$code' ");
+	        $this->plugin->alerts->Trigger(8607, array(
+	            'MSG' => 'added',
+	            'CODEID' => $row->id,
+	            'CODE' => $row->code,
+	            'START' => $row->starts,
+	            'EXPIRES' => $row->expires,
+	            'USES' => $row->uses,            ));
         }
     }
     public function EventPMProDiscountCodeLevelSave ($edit, $level_id) {

@@ -80,7 +80,7 @@ $pmpro_alerts = array(
 				8607,
 				E_NOTICE,
 				__( 'PMPro Discount Code Saved', 'wp-security-audit-log' ),
-				__( 'PMPro Save Disoount Code - ID(%CODEID%) Code %CODE% Starts %START% Expires %EXPIRES% uses %USES% ', 'wp-security-audit-log' )
+				__( 'PMPro %MSG% Disoount Code - ID(%CODEID%) Code %CODE% Starts %START% Expires %EXPIRES% uses %USES% ', 'wp-security-audit-log' )
 			),
 			array(
 				8617,

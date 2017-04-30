@@ -48,6 +48,10 @@ To Exclude alerts:
 
 == Changelog ==
 
+= 1.1.1 =
+* Fixed discount code to show added or modified
+* Fixed bug in call to sensor manager
+
 = 1.1 =
 * Fixed to work with version 2.6.2 of WP Security Audit Log
 * Added activation checks to make sure plugin versions compatibility
