@@ -85,7 +85,6 @@ function wsalpmpro_plugin_activation() {
 
 function wsalpmpro_wsal_init ($wsal) {
 
-	if (is_plugin_active(WSAL_PLUGIN_NAME) && is_plugin_active(PMPRO_PLUGIN_NAME)) {
 		include_once 'pmpro-alerts.php';
 		$wsal->alerts->RegisterGroup( $pmpro_alerts );
 
@@ -100,9 +99,6 @@ function wsalpmpro_wsal_init ($wsal) {
 				$wsal->sensors->AddFromClass( $class );
 			}
 		}
-	} else {
-		// required plugins not active should notify someone? or do something?
-	}
 }
 add_action('wsal_init', 'wsalpmpro_wsal_init');
 
