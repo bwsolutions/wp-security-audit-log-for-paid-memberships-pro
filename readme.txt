@@ -2,7 +2,7 @@
 Contributors: bwsolutions
 Tags: WP Security Audit Log, Paid Memberships Pro, pmpro, memberships, audit
 Requires at least: 4
-Tested up to: 4.7.2
+Tested up to: 4.8
 Depends on : WP Security Audit Log, Paid Memberships Pro
 Stable tag: 1.1.2
 
