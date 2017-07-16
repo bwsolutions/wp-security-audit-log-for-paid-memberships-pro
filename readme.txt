@@ -1,17 +1,18 @@
 === WP Security Audit Log addon for Paid Memberships Pro ===
-Contributors: bwsolutions
-Tags: WP Security Audit Log, Paid Memberships Pro, pmpro, memberships, audit
+Contributors: billstotlz
+Tags: Wordpress Security Audit Log, Wordpress Security plugin, event log wordpress, Paid Memberships Pro, pmpro, membership, audit log
 Requires at least: 4
 Tested up to: 4.8
+Stable tag: 1.1.3
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YWVUDU9RTFXX4
 Depends on : WP Security Audit Log, Paid Memberships Pro
-Stable tag: 1.1.2
 
-An Addon to WP Security Audit Log to log events in Paid Memberships Pro
+An Addon to the WP Security Audit Log plugin to log events from Paid Memberships Pro plugin
 
 == Description ==
 
-Extend the plugin WP Security Audit Log to log events from Paid Memberships Pro.
-This also include audit logs to track changes to User Meta values.
+This plugin Extends the plugin WP Security Audit Log to log events from the Paid Memberships Pro plugin.
+This also includes some audit logs to track changes to User Meta values.
 
 = Actions / Hooks Supported in the plugin =
 This plugin currently supports the following actions.
@@ -96,6 +97,13 @@ To Exclude alerts:
 == Screenshots ==
 
 == Changelog ==
+
+= 1.1.3 =
+*
+
+= 1.1.2 =
+* Fixed typos
+* verified with version 4.8
 
 = 1.1.1 =
 * Fixed discount code to show added or modified

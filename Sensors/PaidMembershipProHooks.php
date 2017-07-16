@@ -351,7 +351,9 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
             'TYPE' => $old_order->payment_type,
         ));
     }
+
     public function EventPMProSubscriptionExpired ($old_order) {
+    	/** @var  $user */
         $user = get_user_by('id', $old_order->user_id);
 
         //  'PMPro Subscription Expired: Last Order (%ORDERID%) %CODE% for %User% (%USERID%) Gateway %GATEWAY%  Txn ID %subscription_transaction_id% Amount %AMT% Status %STATUS% Type %TYPE% '
