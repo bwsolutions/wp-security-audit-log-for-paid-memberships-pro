@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/wpsecurity-audit-log-for-pmpro.iml" filepath="$PROJECT_DIR$/.idea/wpsecurity-audit-log-for-pmpro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/wp-security-audit-log-for-paid-memberships-pro.iml" filepath="$PROJECT_DIR$/.idea/wp-security-audit-log-for-paid-memberships-pro.iml" />
     </modules>
   </component>
 </project>
