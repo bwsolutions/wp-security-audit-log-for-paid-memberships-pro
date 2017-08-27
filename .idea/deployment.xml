@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="AAC Test">
+  <component name="PublishConfigData" serverName="WP Testing">
     <serverData>
       <paths name="AAC Prod">
         <serverdata>
           <mappings>
             <mapping deploy="/wp-content/plugins\wpsecurity-audit-log-for-pmpro" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$/../../.." web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="AAC Test">
         <serverdata>
           <mappings>
-            <mapping deploy="/wp-content/plugins/wpsecurity-audit-log-for-pmpro" local="$PROJECT_DIR$" web="/wptest/" />
-            <mapping deploy="/wp-content/plugins" local="$PROJECT_DIR$/.." web="/wptest/" />
+            <mapping deploy="/wp-content/plugins/wpsecurity-audit-log-for-pmpro" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$/../../.." web="/" />
           </mappings>
         </serverdata>
       </paths>

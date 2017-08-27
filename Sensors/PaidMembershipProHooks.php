@@ -264,7 +264,7 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
         } else {
 	        $code = preg_replace("/[^A-Za-z0-9\-]/", "", sanitize_text_field($_POST['code']));
 	        $row = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_discount_codes WHERE code = '$code' ");
-	        $this->plugin->alerts->Trigger(8607, array(
+	        $this->plugin->alerts->Trigger(8617, array(
 	            'MSG' => 'added',
 	            'CODEID' => $row->id,
 	            'CODE' => $row->code,
@@ -318,7 +318,7 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
         $row = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_membership_levels WHERE id = '$level_id' ");
         //  'PMPro Delete Member Level - %name%(%id%) [%description%] Confirm %confirm% Pmt %pmt% Amt %amt% Cycle# %cyclenum% Period %period% Limit %limit% Trial %tamt% Trial Limit %tlimit% Exp# %expnum% Exp Period %expperiod% Signups %signups% '
 
-        $this->plugin->alerts->Trigger(8609, array(
+        $this->plugin->alerts->Trigger(8610, array(
             'id'=>$row->id,
             'name' => $row->name,
             'description' => $row->description,
