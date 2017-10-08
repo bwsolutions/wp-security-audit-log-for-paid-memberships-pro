@@ -11,7 +11,7 @@ An Addon to the WP Security Audit Log plugin to log events from Paid Memberships
 
 == Description ==
 
-This plugin Extends the plugin [WP Security Audit Log](https://en-gb.wordpress.org/plugins/wp-security-audit-log/) to log events from the [Paid Memberships Pro](https://wordpress.org/plugins/paid-memberships-pro/) plugin.  This plugin also includes some audit logs alerts to track changes to User Meta values.
+This plugin Extends the plugin [WP Security Audit Log](https://wordpress.org/plugins/wp-security-audit-log/) to log events from the [Paid Memberships Pro](https://wordpress.org/plugins/paid-memberships-pro/) plugin.  This plugin also includes some audit logs alerts to track changes to User Meta values.
 
 = Actions / Hooks Supported in the plugin =
 This plugin currently supports the following actions.
