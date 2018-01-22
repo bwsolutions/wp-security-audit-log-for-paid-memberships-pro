@@ -80,6 +80,9 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
 
         $old_order = new MemberOrder();
         $old_order->getMemberOrderByID($order->id);
+        if (empty($old_order->datetime)) {
+        	$old_order->datetime = $order->datetime;
+        }
         $updatingOrder = $old_order;
 
     }
@@ -136,7 +139,7 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
         }
     }
     private  $levelChanges = array();
-    public function EventPMProBeforeChangeMbrLevel ($level_id, $user_id, $old_levels, $cancel_level){
+    public function EventPMProBeforeChangeMbrLevel ($level_id, $user_id, $old_levels, $cancel_level = NULL){
         global $levelChanges;
         global $wpdb;
 
@@ -147,7 +150,7 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
         }
         $levelChanges[$user_id] = ['level_id' => $level_id, 'old_levels' => $new_old_levels, 'cancel_level' => $cancel_level];
     }
-    public function EventPMProAfterChangeMbrLevel ($level_id, $user_id, $cancel_level) {
+    public function EventPMProAfterChangeMbrLevel ($level_id, $user_id, $cancel_level = NULL) {
         global $levelChanges;
         global $wpdb;
         $user = get_user_by('id',$user_id);
@@ -165,7 +168,7 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
                         'OLDLEVEL' => $old_level->id,
                         'NEWLEVEL' => $mu->membership_id,  //$level_id should be the same???
                         'STARTDATE' => $mu->startdate,
-                        'ENDDATE' => $mu->startdate,
+                        'ENDDATE' => $mu->enddate,
                         'CODEID' => $mu->code_id,
                         'USER' => $user->display_name,
                         'USERID' => $user_id,
@@ -222,7 +225,11 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
         } else {
             $msg = "Got ";
             $row = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_discount_codes_uses WHERE user_id = '$user_id' AND order_id = '$morder->id'");
-            $code_id = $row->code_id;
+            if ($row) {
+            	$code_id = $row->code_id;
+            } else {
+	            $code_id = null;
+            }
             $order = $morder->id;
         }
         //  'PMPro After Checkout %MSG% ORDER(%ORDERID%) Discount Code_ID(%CODEID%) Used for %User% (%USERID%) '

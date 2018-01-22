@@ -54,7 +54,7 @@ class WSAL_Sensors_UserMetaHooks extends WSAL_AbstractSensor
         return false;
     }
 
-    public function EventUserMetaCreated($meta_id, $object_id, $meta_key, $meta_value)
+    public function EventUserMetaCreated($meta_id, $object_id, $meta_key, $meta_value = null)
     {
         $user = get_user_by('id',$object_id);
         $this->plugin->alerts->Trigger(8501, array(
@@ -66,7 +66,7 @@ class WSAL_Sensors_UserMetaHooks extends WSAL_AbstractSensor
 
     }
 
-    public function EventUserMetaUpdating($meta_id, $object_id, $meta_key, $meta_value)
+    public function EventUserMetaUpdating($meta_id, $object_id, $meta_key, $meta_value = null)
     {
         static $meta_type = 'user';
         $this->old_meta[$meta_id] = (object)array(
@@ -75,7 +75,7 @@ class WSAL_Sensors_UserMetaHooks extends WSAL_AbstractSensor
         );
     }
 
-    public function EventUserMetaUpdated($meta_id, $object_id, $meta_key, $meta_value)
+    public function EventUserMetaUpdated($meta_id, $object_id, $meta_key, $meta_value = null)
     {
         $user = get_user_by('id',$object_id);
 
@@ -108,7 +108,7 @@ class WSAL_Sensors_UserMetaHooks extends WSAL_AbstractSensor
 
     }
 
-    public function EventUserMetaDeleted($meta_ids, $object_id, $meta_key, $meta_value)
+    public function EventUserMetaDeleted($meta_ids, $object_id, $meta_key, $meta_value = null)
     {
         $user = get_user_by('id',$object_id);
 
