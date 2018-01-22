@@ -3,13 +3,13 @@
   Plugin Name: WP Security Audit Log for Paid Memberships Pro
   Plugin URI: https://github.com/bwsolutions/wpsal4pmpro
   Description: an addon to the WP Security Audit Log Plugin to track events in the Paid Memberships Pro plugin
-  Version: 1.1.4
+  Version: 1.1.5
   Author: Bill Stoltz
   Author URI:
   Depends: WP Security Audit Log, Paid Memberships Pro
   License: GPL3
   */
-define('WSALPMPRO_VERSION', '1.1.4');
+define('WSALPMPRO_VERSION', '1.1.5');
 
 define('PMPRO_PLUGIN_NAME', 'paid-memberships-pro/paid-memberships-pro.php');
 define('WSAL_PLUGIN_NAME', 'wp-security-audit-log/wp-security-audit-log.php');

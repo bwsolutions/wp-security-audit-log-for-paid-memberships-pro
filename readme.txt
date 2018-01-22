@@ -2,8 +2,8 @@
 Contributors: billstotlz
 Tags: Wordpress Security Audit Log, Wordpress Security plugin, event log wordpress, Paid Memberships Pro, pmpro, membership, audit log
 Requires at least: 4
-Tested up to: 4.8.1
-Stable tag: 1.1.4
+Tested up to: 4.9.2
+Stable tag: 1.1.5
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YWVUDU9RTFXX4
 Depends on : WP Security Audit Log, Paid Memberships Pro
 
@@ -97,6 +97,10 @@ To Exclude alerts:
 == Screenshots ==
 
 == Changelog ==
+
+= 1.1.5 =
+* fix case where pmpro_after_change_membership_level only sends 2 parameters
+* tested with version 3.0 of WP Security Audit Log and new license model
 
 = 1.1.4 =
 * fixed errors in a couple alert codes

@@ -139,7 +139,7 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
         }
     }
     private  $levelChanges = array();
-    public function EventPMProBeforeChangeMbrLevel ($level_id, $user_id, $old_levels, $cancel_level){
+    public function EventPMProBeforeChangeMbrLevel ($level_id, $user_id, $old_levels, $cancel_level = NULL){
         global $levelChanges;
         global $wpdb;
 
@@ -150,7 +150,7 @@ class WSAL_Sensors_PaidMembershipProHooks extends WSAL_AbstractSensor
         }
         $levelChanges[$user_id] = ['level_id' => $level_id, 'old_levels' => $new_old_levels, 'cancel_level' => $cancel_level];
     }
-    public function EventPMProAfterChangeMbrLevel ($level_id, $user_id, $cancel_level) {
+    public function EventPMProAfterChangeMbrLevel ($level_id, $user_id, $cancel_level = NULL) {
         global $levelChanges;
         global $wpdb;
         $user = get_user_by('id',$user_id);
